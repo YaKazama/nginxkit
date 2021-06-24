@@ -12,6 +12,10 @@
 
 ## 示例
 
+> Tips
+> 若需要从环境变量获取值并处理，可以与[settingkit](https://github.com/YaKazama/settingkit.git)一起配合使用。
+>
+
 ```python
 import nginxkit
 
