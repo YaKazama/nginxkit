@@ -111,8 +111,9 @@ class NginxBuilder(object):
         self.is_v2 = True if _pyv[:3] < (3, 6, 0) else False
         # 处理特殊关键字的顺序
         self.ss = sort_list if sort_list else [
-            'log_format', 'access_log', 'include', 'server', 'resolver', 'set',
-            'location', 'allow', 'deny', 'rewrite', 'return'
+            'load_module', 'include', 'log_format', 'access_log', 'events',
+            'server', 'resolver', 'set', 'location', 'allow', 'deny',
+            'rewrite', 'return'
         ]
 
     def __iter__(self, obj=None, parrent='', indent=0, spacer=' '):
@@ -213,4 +214,7 @@ def default_nginx_simple(out='nginx.conf', to_file=False):
         ngx.to_file(out)
     else:
         print(ngx.as_string())
+
+
+__all__ = []
 
